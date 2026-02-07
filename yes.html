@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>I Love You</title>
+<title>Thank You</title>
 
 <style>
 body {
@@ -13,67 +13,40 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Georgia', serif;
+  font-family: Georgia, serif;
   text-align: center;
 }
 
-/* Message text */
 h1 {
-  font-size: 46px;
+  font-size: 44px;
   color: #b30000;
 }
 
 h2 {
-  font-size: 32px;
+  font-size: 30px;
+  margin-top: 10px;
   color: #333;
 }
 
-/* Blinking I Love You */
-.blink {
+.love {
   margin-top: 30px;
-  font-size: 50px;
+  font-size: 46px;
   color: red;
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0% { opacity: 1; }
   50% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* Floating hearts */
-.heart {
-  position: absolute;
-  bottom: -20px;
-  font-size: 22px;
-  animation: float 5s linear infinite;
-}
-
-@keyframes float {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-120vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Thank You 💕</h1>
+<h1>Thank You</h1>
 <h2>For making my Valentine’s Day<br>such a special one!</h2>
 
-<div class="blink">I ❤️ LOVE ❤️ YOU</div>
-
-<script>
-setInterval(() => {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerHTML = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 5000);
-}, 300);
-</script>
+<div class="love">I ❤️ LOVE ❤️ YOU</div>
 
 </body>
 </html>
