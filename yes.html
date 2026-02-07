@@ -1,52 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Thank You</title>
+<title>I Love You</title>
 
 <style>
 body {
   margin: 0;
   height: 100vh;
-  background: #fff;
+  background: radial-gradient(circle, #ff758c, #ff7eb3);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  font-family: Georgia, serif;
+  font-family: 'Segoe UI', sans-serif;
+  color: white;
   text-align: center;
 }
 
 h1 {
-  font-size: 44px;
-  color: #b30000;
+  font-size: 45px;
+  animation: fadeIn 2s ease;
 }
 
 h2 {
-  font-size: 30px;
-  margin-top: 10px;
-  color: #333;
+  margin-top: 20px;
+  animation: fadeIn 3s ease;
 }
 
-.love {
-  margin-top: 30px;
-  font-size: 46px;
-  color: red;
-  animation: blink 1s infinite;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes blink {
-  50% { opacity: 0; }
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 24px;
+  animation: floatUp 5s linear infinite;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
 }
 </style>
 </head>
 
 <body>
 
-<h1>Thank You</h1>
-<h2>For making my Valentine’s Day<br>such a special one!</h2>
+<h1>Thank you for being my Valentine 💕</h1>
+<h2>I love you forever 😘</h2>
 
-<div class="love">I ❤️ LOVE ❤️ YOU</div>
+<script>
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 5000);
+}, 250);
+</script>
 
 </body>
 </html>
