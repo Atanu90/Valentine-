@@ -8,74 +8,54 @@
 body {
   margin: 0;
   height: 100vh;
-  background: #ffe6eb;
-  background-image: radial-gradient(#ffb6c1 1px, transparent 1px);
-  background-size: 40px 40px;
-  overflow: hidden;
-  font-family: 'Comic Sans MS', cursive;
+  background: #ffeef2;
+  font-family: Arial, sans-serif;
   text-align: center;
+  overflow: hidden;
 }
 
-/* Teddy image */
 img {
+  width: 150px;
   margin-top: 60px;
-  width: 160px;
 }
 
-/* Title */
 h1 {
-  font-size: 42px;
-  color: #222;
+  font-size: 38px;
   margin-top: 20px;
+  color: #222;
 }
 
-/* Buttons */
+.buttons {
+  margin-top: 40px;
+}
+
 button {
-  padding: 18px 40px;
-  font-size: 22px;
+  padding: 20px 50px;
+  font-size: 24px;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  margin: 20px;
-  position: absolute;
-  transition: transform 0.3s ease;
+  margin: 15px;
 }
 
 #yes {
   background: #2ecc71;
   color: white;
-  left: 40%;
-  top: 65%;
 }
 
 #no {
   background: #e74c3c;
   color: white;
+  position: absolute;
 }
 
-/* Floating hearts */
+/* soft floating hearts */
 .heart {
   position: absolute;
   bottom: -20px;
   font-size: 18px;
+  opacity: 0.6;
   animation: float 6s linear infinite;
-  opacity: 0.7;
 }
 
 @keyframes float {
-  from { transform: translateY(0); opacity: 1; }
-  to { transform: translateY(-110vh); opacity: 0; }
-}
-</style>
-</head>
-
-<body>
-
-<img src="https://i.imgur.com/8q884zI.png" alt="Cute Bear">
-
-<h1>Will you be my Valentine? 💖</h1>
-
-<button id="yes" onclick="yesClick()">Yes</button>
-<button id="no" onmouseover="runAway()">No</button>
-
-<script>
