@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>I Love You</title>
@@ -8,39 +8,49 @@
 body {
   margin: 0;
   height: 100vh;
-  background: radial-gradient(circle, #ff758c, #ff7eb3);
+  background: #fff;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-  font-family: 'Segoe UI', sans-serif;
-  color: white;
+  font-family: 'Georgia', serif;
   text-align: center;
 }
 
+/* Message text */
 h1 {
-  font-size: 45px;
-  animation: fadeIn 2s ease;
+  font-size: 46px;
+  color: #b30000;
 }
 
 h2 {
-  margin-top: 20px;
-  animation: fadeIn 3s ease;
+  font-size: 32px;
+  color: #333;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Blinking I Love You */
+.blink {
+  margin-top: 30px;
+  font-size: 50px;
+  color: red;
+  animation: blink 1s infinite;
 }
 
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Floating hearts */
 .heart {
   position: absolute;
   bottom: -20px;
-  font-size: 24px;
-  animation: floatUp 5s linear infinite;
+  font-size: 22px;
+  animation: float 5s linear infinite;
 }
 
-@keyframes floatUp {
+@keyframes float {
   from { transform: translateY(0); opacity: 1; }
   to { transform: translateY(-120vh); opacity: 0; }
 }
@@ -49,18 +59,20 @@ h2 {
 
 <body>
 
-<h1>Thank you for being my Valentine 💕</h1>
-<h2>I love you forever 😘</h2>
+<h1>Thank You 💕</h1>
+<h2>For making my Valentine’s Day<br>such a special one!</h2>
+
+<div class="blink">I ❤️ LOVE ❤️ YOU</div>
 
 <script>
 setInterval(() => {
-  let heart = document.createElement("div");
+  const heart = document.createElement("div");
   heart.className = "heart";
   heart.innerHTML = "❤️";
   heart.style.left = Math.random() * 100 + "vw";
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 5000);
-}, 250);
+}, 300);
 </script>
 
 </body>
